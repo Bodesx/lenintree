@@ -53,25 +53,36 @@ const config = {
           ring: "hsl(var(--sidebar-ring))",
         },
         customgreys: {
-          primarybg: "#1B1C22",
-          secondarybg: "#25262F",
+          primarybg: "#111112FF",
+          secondarybg: "#202125FF",
           darkGrey: "#17181D",
-          darkerGrey: "#3d3d3d",
-          dirtyGrey: "#6e6e6e",
+          darkerGrey: "#2B2A2AFF",
+          dirtyGrey: "#8E8D8DFF",
         },
+
+
+        transitionTimingFunction: {
+  'out-expo': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+ },
+
+ "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
+ 
         primary: {
           "50": "#fdfdff",
           "100": "#f7f7ff",
-          "200": "#ececff",
-          "300": "#ddddfe",
-          "400": "#cacafe",
-          "500": "#b3b3fd",
-          "600": "#9898fd",
-          "700": "#7878fc",
-          "750": "#5a5be6",
-          "800": "#0404be",
-          "900": "#020255",
-          "950": "#010132",
+          "200": "#FFF5ECFF",
+          "300": "#FEEDDDFF",
+          "400": "#FEE8CAFF",
+          "500": "#FDD1B3FF",
+          "600": "#F2A137FF",
+          "700": "#F0730CFF",
+          "750": "#F0730DFF",
+          "800": "#BE5504FF",
+          "900": "#9E4A00FF",
+          "950": "#752E02FF",
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
@@ -111,6 +122,10 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+          marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
         "accordion-down": {
           from: {
             height: "0",
@@ -118,7 +133,12 @@ const config = {
           to: {
             height: "var(--radix-accordion-content-height)",
           },
+         
         },
+
+
+
+        
         "accordion-up": {
           from: {
             height: "var(--radix-accordion-content-height)",
@@ -131,6 +151,8 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
       fontFamily: {
         sans: ["var(--font-dm-sans)"],
@@ -143,6 +165,15 @@ const config = {
         xl: ["1.25rem", { lineHeight: "1.75rem" }],
         "2xl": ["1.5rem", { lineHeight: "2rem" }],
       },
+
+
+
+
+
+
+
+
+      
     },
   },
   plugins: [require("tailwindcss-animate"), "prettier-plugin-tailwindcss"],

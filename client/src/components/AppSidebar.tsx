@@ -29,6 +29,7 @@ const AppSidebar = () => {
   const { user, isLoaded } = useUser();
   const { signOut } = useClerk();
   const pathname = usePathname();
+  console.log(pathname);
   const { toggleSidebar } = useSidebar();
 
   const navLinks = {
@@ -76,7 +77,10 @@ const AppSidebar = () => {
                     height={20}
                     className="app-sidebar__logo"
                   />
+                  
                   <p className="app-sidebar__title">Lenintree</p>
+                   
+                 
                 </div>
                 <PanelLeft className="app-sidebar__collapse-icon" />
               </div>
@@ -104,7 +108,7 @@ const AppSidebar = () => {
                     !isActive && "text-customgreys-dirtyGrey"
                   )}
                 >
-                  <Link
+                  <Link 
                     href={link.href}
                     className="app-sidebar__nav-link"
                     scroll={false}
@@ -131,7 +135,15 @@ const AppSidebar = () => {
       <SidebarFooter>
         <SidebarMenu>
           <SidebarMenuItem>
+
+             <SidebarMenuButton asChild>
+              
+              <button>
+                <Link href="/" className="app-sidebar__signout" >home</Link>
+              </button>
+            </SidebarMenuButton>
             <SidebarMenuButton asChild>
+              
               <button
                 onClick={() => signOut()}
                 className="app-sidebar__signout"
@@ -140,6 +152,7 @@ const AppSidebar = () => {
                 <span>Sign out</span>
               </button>
             </SidebarMenuButton>
+            
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>
