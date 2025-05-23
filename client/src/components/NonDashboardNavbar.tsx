@@ -6,8 +6,9 @@ import { Bell, BookOpen } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { NavigationMenuBar } from "./navigation-bar";
 
-const NonDashboardNavbar = () => {
+const NonDashboardNavbar = () => { 
   const { user } = useUser();
   const userRole = user?.publicMetadata?.userType as "student" | "teacher";
   console.log("user?publicMetadata?.userType:", user?.publicMetadata?.userType)
@@ -42,6 +43,7 @@ const NonDashboardNavbar = () => {
             </div>
           </div>
         </div>
+        <NavigationMenuBar />
         <div className="nondashboard-navbar__actions">
           <button className="nondashboard-navbar__notification-button">
             <span className="nondashboard-navbar__notification-indicator"></span>

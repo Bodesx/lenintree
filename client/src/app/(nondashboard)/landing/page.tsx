@@ -11,7 +11,9 @@ import { useRouter } from "next/navigation";
 import CourseCardSearch from "@/components/CourseCardSearch";
 
 import Mousehero from "@/components/mousetrial";
-import { InteractiveHoverButtonDemo } from "@/components/hoverbtn";
+
+import SecondSection from "./components-main/second-section/page";
+
 
 const LoadingSkeleton = () => {
   return (
@@ -74,9 +76,10 @@ const Landing = () => {
       >
         <div className="landing__hero-content">
          <Mousehero/>
+         
           <div className="landing__cta">
             <Link href="/search" scroll={false}>
-              <InteractiveHoverButtonDemo/>
+            <SecondSection />
             </Link>
           
             
@@ -111,7 +114,7 @@ const Landing = () => {
           courses just for you and preparing your entire journey for learning
           and making the most.
         </p>
-
+       
         <div className="landing__tags">
           {[
             "web development",
@@ -124,6 +127,7 @@ const Landing = () => {
               {tag}
             </span>
           ))}
+           
         </div>
 
         <div className="landing__courses">
@@ -145,6 +149,7 @@ const Landing = () => {
         </div>
       </motion.div>
     </motion.div>
+    
   );
 };
 
